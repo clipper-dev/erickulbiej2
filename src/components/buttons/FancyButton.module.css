@@ -1,0 +1,46 @@
+.buttonWrapper {
+	background: linear-gradient(
+	  to right,
+	  #6366f1,
+	  #8789ed,
+	  #8789ed,
+	  #6366f1
+	);
+	background-size: 400%;
+	background-position: 0% center;
+	transition: background-position 0.5s;
+  }
+  .buttonWrapper a, .buttonWrapper Link, .buttonWrapper div {
+	  color: white !important;
+  }
+  .buttonWrapper:hover {
+	background-position: 100% center;
+  }
+  .label {
+	transition: transform 0.6s 0.125s cubic-bezier(0.1, 0.75, 0.25, 1);
+	margin-inline-start: -23px;
+  }
+  .buttonWrapper:hover .label {
+	transform: translateX(23px);
+  }
+  .arrowLeft, .arrowRight {
+	  margin: 0 4px;
+  
+  }
+  .arrowRight,
+  .buttonWrapper:hover .arrowLeft {
+	transition: opacity 0.4s 0.25s, transform 0.6s 0.25s;
+	transition-timing-function: cubic-bezier(0.1, 0.75, 0.25, 1);
+  }
+  .buttonWrapper:hover .arrowRight,
+  .arrowLeft {
+	opacity: 0;
+	transition-delay: 0s;
+	transform: translateX(10px);
+  }
+  .buttonWrapper:hover .arrowLeft {
+	opacity: 1;
+	transform: translateX(0);
+	transition-delay: 0.225s;
+  }
+  
