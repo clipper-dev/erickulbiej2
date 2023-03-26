@@ -1,6 +1,9 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useState } from "react";
+import FancyButton from "../buttons/FancyButton";
 
 function Hero() {
   const texts = ["developer", "researcher", "seafarer", "creator", "dreamer"];
@@ -70,12 +73,73 @@ function Hero() {
   ]);
 
   return (
-    <div className="w-full flex flex-col py-20 items-center">
-      <div className="max-w-screen-xl w-full flex flex-col items-left gap-4">
-        <h1 className="text-6xl font-bold">Hi, it&apos;s Eric 👋</h1>
-        <p className="text-6xl font-bold">
-          I&apos;m a <span className="text-rose-600">{displayedText}</span>
-        </p>
+    <div className="w-full flex flex-col pt-16 pb-2 items-center">
+      {/* desktop */}
+      <div className=" hidden w-full lg:flex flex-row gap-4 items-center justify-center">
+        <div className="flex flex-[2]">
+          <div className=" rounded-full rounded-tl-none rounded-bl-none overflow-hidden relative w-full aspect-square">
+            <Image
+              src="/res/eric.jpg"
+              fill
+              objectFit="cover"
+              alt="eric kulbiej profile picture"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col items-start lg:p-0 lg:items-start gap-4 items-left flex-[3] text-2xl lg:text-6xl font-bold">
+          <div className="flex flex-col">
+            <span className="">Hi, it&apos;s Eric 👋</span>
+            <span>
+              I&apos;m a{" "}
+              <span className="text-indigo-600">{displayedText}</span>
+            </span>
+          </div>
+          <span className="font-normal text-neutral-500 text-sm lg:text-lg max-w-[50ch]">
+            If you want to learn about my projects or read my blog on
+            productivity, you have come to the right place.
+          </span>
+          <div className="flex flex-row gap-4">
+            <FancyButton type="up">
+              <Link href="#projects">See projects</Link>
+            </FancyButton>
+            <FancyButton type="right">
+              <Link href="/blog">Read Blog</Link>
+            </FancyButton>
+          </div>
+        </div>
+      </div>
+      {/* mobile */}
+      <div className=" lg:hidden w-full flex flex-col gap-4">
+        {/* divide into two equal parts using grid */}
+        <div className="grid grid-cols-6 gap-2">
+          <div className="rounded-full rounded-tl-none rounded-bl-none overflow-hidden relative w-full aspect-square col-span-2">
+            <Image
+              src="/res/eric.jpg"
+              fill
+              style={{ objectFit: "cover" }}
+              alt="eric kulbiej profile picture"
+            />
+          </div>
+          <div className="flex flex-col items-start justify-center lg:p-0 lg:items-start items-left flex-[3] text-3xl lg:text-6xl font-bold col-span-4">
+            <span className="">Hi, it&apos;s Eric 👋</span>
+            <span>
+              I&apos;m a{" "}
+              <span className="text-indigo-600">{displayedText}</span>
+            </span>
+          </div>
+        </div>
+        <span className="mx-2 font-normal text-neutral-500 text-sm lg:text-lg max-w-[50ch]">
+          If you want to learn about my projects or read my blog on
+          productivity, you have come to the right place.
+        </span>
+        <div className="flex flex-row gap-4 mx-2">
+          <FancyButton type="up">
+            <Link href="#projects">See projects</Link>
+          </FancyButton>
+          <FancyButton type="right">
+            <Link href="/blog">Read Blog</Link>
+          </FancyButton>
+        </div>
       </div>
     </div>
   );

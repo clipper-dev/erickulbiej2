@@ -1,6 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -15,13 +16,14 @@ interface Props {
   data: MenuItem[];
 }
 function Navbar({ data }: Props) {
+  const [sidebar, setSidebar] = useState(false);
   return (
-    <header className="bg-transparent fixed w-full backdrop-blur z-50">
-      <div className="py-2 px-4 flex flex-row justify-between">
+    <header className="bg-transparent fixed w-full backdrop-blur z-50 flex justify-center shadow-sm bg-white">
+      <div className=" max-w-screen-lg flex-1 p-2 flex flex-row justify-between">
         {/* left */}
         <Link
           href={"/"}
-          className=" text-zinc-900 flex flex-row items-center gap-2 text-2xl font-bold"
+          className=" text-zinc-900 flex flex-row items-center gap-2 text-lg lg:text-2xl font-bold"
         >
           {/* <Image
             alt="Eric Kulbiej"
@@ -32,13 +34,13 @@ function Navbar({ data }: Props) {
           eric kulbiej
         </Link>
         {/* right */}
-        <div className="flex flex-row gap-4">
+        <div className=" hidden lg:flex flex-row gap-8">
           {/*  <FancyButton className="text-indigo-50 flex flex-row items-center gap-2 text-md font-bold">
             <Link href="/signin" className="text-lg font-bold">
               Contact 
             </Link>
           </FancyButton> */}
-          <span className="flex flex-row items-center gap-4 text-md font-semibold">
+          <span className="flex flex-row items-center gap-8 text-md font-semibold">
             {data.map((item, index) => (
               <Link
                 key={index}
@@ -49,6 +51,19 @@ function Navbar({ data }: Props) {
               </Link>
             ))}
           </span>
+        </div>
+        <div
+          className="flex lg:hidden items-center"
+          onClick={() => {
+            setSidebar(!sidebar);
+          }}
+        >
+          <div
+            className={
+              "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 " +
+              (sidebar ? " before:translate-y-0 after:translate-y-0 before:rotate-90 -rotate-45" : "")
+            }
+          ></div>
         </div>
       </div>
     </header>
