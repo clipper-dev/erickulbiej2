@@ -10,7 +10,6 @@ import {
   FaSuitcaseRolling,
   FaUser,
 } from "react-icons/fa";
-import { MenuItem } from "../../types/MenuItem";
 import FancyButton from "../buttons/FancyButton";
 interface Props {
   data: MenuItem[];
