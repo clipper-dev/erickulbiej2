@@ -59,10 +59,34 @@ function Navbar({ data }: Props) {
         >
           <div
             className={
-              "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 " +
-              (sidebar ? " before:translate-y-0 after:translate-y-0 before:rotate-90 -rotate-45" : "")
+              "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 before:-translate-x-0 before:transition-all after:transition-all " +
+              (sidebar
+                ? " after:translate-y-0 before:rotate-90 -rotate-45 before:-translate-x-0 before:translate-y-0 "
+                : "")
             }
           ></div>
+        </div>
+      </div>
+      {/* sidebar that comes from right side when sidebar value is changed */}
+      <div
+        className={
+          "fixed top-[44px] right-0 h-screen w-[50%] bg-white shadow-lg transition-all z-50 border-t-2 " +
+          (sidebar ? " translate-x-0 " : " translate-x-full ")
+        }
+      >
+        <div className="flex flex-col gap-4 p-4 ml-4">
+            {data.map((item, index) => (
+              <Link
+                key={index}
+                href={item.path}
+                className="flex flex-row items-center gap-8 text-lg font-semibold transition-all hover:text-red-600"
+                onClick={() => {
+                  setSidebar(!sidebar);
+                }}
+              >
+                {item.title}
+              </Link>
+            ))}
         </div>
       </div>
     </header>

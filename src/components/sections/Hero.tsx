@@ -75,7 +75,7 @@ function Hero() {
   return (
     <div className="w-full flex flex-col pt-16 pb-2 items-center">
       {/* desktop */}
-      <div className=" hidden w-full lg:flex flex-row gap-4 items-center justify-center">
+      <div className=" hidden w-full md:flex flex-row gap-4 items-center justify-center">
         <div className="flex flex-[2]">
           <div className=" rounded-full rounded-tl-none rounded-bl-none overflow-hidden relative w-full aspect-square">
             <Image
@@ -86,7 +86,7 @@ function Hero() {
             />
           </div>
         </div>
-        <div className="flex flex-col items-start lg:p-0 lg:items-start gap-4 items-left flex-[3] text-2xl lg:text-6xl font-bold">
+        <div className="flex flex-col justify-center lg:p-0 lg:items-start gap-4 items-left flex-[3] text-2xl lg:text-6xl font-bold">
           <div className="flex flex-col">
             <span className="">Hi, it&apos;s Eric 👋</span>
             <span>
@@ -94,7 +94,7 @@ function Hero() {
               <span className="text-indigo-600">{displayedText}</span>
             </span>
           </div>
-          <span className="font-normal text-neutral-500 text-sm lg:text-lg max-w-[50ch]">
+          <span className="font-normal text-neutral-500 text-sm  lg:text-lg max-w-[50ch]">
             If you want to learn about my projects or read my blog on
             productivity, you have come to the right place.
           </span>
@@ -109,7 +109,7 @@ function Hero() {
         </div>
       </div>
       {/* mobile */}
-      <div className=" lg:hidden w-full flex flex-col gap-4">
+      <div className=" md:hidden w-full flex flex-col gap-4">
         {/* divide into two equal parts using grid */}
         <div className="grid grid-cols-6 gap-2">
           <div className="rounded-full rounded-tl-none rounded-bl-none overflow-hidden relative w-full aspect-square col-span-2">
