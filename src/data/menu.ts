@@ -1,5 +1,3 @@
-import { MenuItem } from "../types/MenuItem";
-
 export const menu: MenuItem[] = [
   {
     title: "Home",
