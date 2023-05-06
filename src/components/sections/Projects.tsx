@@ -14,6 +14,7 @@ function Projects() {
         </span>
         {projects.map((item, index) => (
           <div
+            key={index}
             className={
               "w-full flex flex-col lg:flex-row gap-4 rounded-lg shadow-lg bg-white " +
               (item.layout === "left" && " lg:flex-row") +
