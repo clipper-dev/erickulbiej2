@@ -1,4 +1,5 @@
 import { PortableText } from "@portabletext/react";
+import Head from "next/head";
 import Image from "next/image";
 import { HiShare } from "react-icons/hi";
 import { getPost } from "../../../sanity/sanity-utils";
@@ -10,6 +11,36 @@ interface Props {
   params: { slug: string };
 }
 
+export async function generateMetadata({params}: Props){
+  const post: Post = await getPost(params.slug);
+  const date = new Date(post.publishedAt);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  return {
+    title: `${post.title} - Post Productive`,
+    description: post.bio,
+    openGraph: {
+      title: `${post.title} - Post Productive`,
+      description: post.bio,
+      url: `https://www.erickulbiej.com/${post.slug}`,
+      type: "website",
+      images: [
+        {
+          url: post.mainImage,
+          width: 800,
+          height: 600,
+          alt: `${post.title} - Post Productive`,
+        },
+      ],
+    },
+  }
+
+}
+
 export default async function BlogPost({ params }: Props) {
   const post: Post = await getPost(params.slug);
   const date = new Date(post.publishedAt);
@@ -19,7 +50,7 @@ export default async function BlogPost({ params }: Props) {
     month: "long",
     day: "numeric",
   });
-  
+
   /* share article function  */
   return (
     <>
@@ -81,13 +112,13 @@ export default async function BlogPost({ params }: Props) {
                 </span>
               </article>
               {/* share button */}
-              <ShareButton post={
-                {
+              <ShareButton
+                post={{
                   title: post.title,
                   bio: post.bio,
                   image: post.mainImage,
-                }
-              } />
+                }}
+              />
             </div>
 
             {/* body */}

@@ -7,11 +7,11 @@ function BlogHero() {
         <div className="flex flex-row gap-2 pt-12">
           <div className=" w-[4px] bg-indigo-600"></div>
           <h1 className=" self-start text-3xl lg:text-5xl font-bold">
-            My blog aka food for thoughts 🍔
+            Post Productive aka food for thoughts 🍔
           </h1>
         </div>
         <span className="text-lg lg:text-xl text-gray-500">
-          Welcome to my blog, a space dedicated to the pursuit of personal
+          Welcome to my <span className="text-indigo-500">Post Productive</span>, my blog, and the space dedicated to the pursuit of personal
           growth and the art of living a balanced, fulfilling life. As a
           passionate advocate for productivity, time management, and
           self-development, I believe in the power of reflection and learning as

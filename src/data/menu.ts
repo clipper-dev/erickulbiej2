@@ -13,7 +13,7 @@ export const menu: MenuItem[] = [
   },
   {
     title: "Blog",
-    path: "/blog",
+    path: "/post-productive",
   },
   {
     title: "Contact",
