@@ -11,7 +11,7 @@ function BlogHero() {
           </h1>
         </div>
         <span className="text-lg lg:text-xl text-gray-500">
-          Welcome to my <span className="text-indigo-500">Post Productive</span>, my blog, and the space dedicated to the pursuit of personal
+          Welcome to <span className="text-indigo-500">Post Productive</span>, my blog, and the space dedicated to the pursuit of personal
           growth and the art of living a balanced, fulfilling life. As a
           passionate advocate for productivity, time management, and
           self-development, I believe in the power of reflection and learning as
