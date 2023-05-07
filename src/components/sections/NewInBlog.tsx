@@ -5,35 +5,13 @@ import matter from "gray-matter";
 import Image from "next/image";
 import Tag from "../crumbs/Tag";
 import BlogCard from "../cards/BlogCard";
+import { getPosts } from "../../../sanity/sanity-utils";
+import { Post } from "../../types/Post";
 
 async function NewInBlog() {
-  async function getBlogPosts() {
-    const files = fs.readdirSync(path.join("src/articles"));
-    const posts = files.map((filename) => {
-      /* get the slug */
-      const slug = filename.replace(".md", "");
-      /* get frontmatter */
-      const markdownWithMeta = fs.readFileSync(
-        path.join("src/articles", filename),
-        "utf-8"
-      );
-      const { data } = matter(markdownWithMeta);
-      let frontmatter = {
-        title: data.title,
-        bio: data.bio,
-        tag: data.tag,
-        image: data.image,
-      };
-      return {
-        slug,
-        frontmatter,
-      };
-    });
-    return posts;
-  }
-  const posts = await getBlogPosts();
-  return (   
-   <div className="w-full flex flex-col items-center">
+  const posts: Post[] = await getPosts();
+  return (
+    <div className="w-full flex flex-col items-center">
       <div className="w-full max-w-screen-lg flex flex-col gap-4 p-2">
         <div className="flex flex-row gap-2">
           <div className=" w-[4px] bg-indigo-600"></div>
@@ -42,8 +20,8 @@ async function NewInBlog() {
           </h2>
         </div>
         <div className="flex flex-col w-full gap-4">
-          {posts.map((post, index) => (
-            <BlogCard post={post} key={index} />
+          {posts.map((post: Post, index: number) => (
+            <BlogCard key={index} post={post} />
           ))}
         </div>
       </div>

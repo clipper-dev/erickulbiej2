@@ -11,6 +11,10 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Inter", "Helvetica", "Arial", "sans-serif"],
+      /* serif fonts */
+      serif: ["Merriweather", "Georgia", "Cambria", "serif"],
+      /* mono fonts */
+      mono: ["Menlo", "Monaco", "Courier New", "monospace"],
     },
     extend: {},
   },

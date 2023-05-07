@@ -59,9 +59,9 @@ function Navbar({ data }: Props) {
         >
           <div
             className={
-              "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 before:-translate-x-0 before:transition-all after:transition-all " +
+              "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 before:transition-all after:transition-all " +
               (sidebar
-                ? " after:translate-y-0 before:rotate-90 -rotate-45 before:-translate-x-0 before:translate-y-0 "
+                ? " after:translate-y-0 before:-translate-y-0 -rotate-45 before:rotate-90 after:rotate-90"
                 : "")
             }
           ></div>
