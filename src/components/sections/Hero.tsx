@@ -95,15 +95,15 @@ function Hero() {
             </span>
           </div>
           <span className="font-normal text-neutral-500 text-sm  lg:text-lg max-w-[50ch]">
-            If you want to learn about my projects or read my blog on
-            productivity, you have come to the right place.
+            If you want to learn about my projects or read Post Productive, my
+            blog on productivity, you have come to the right place.
           </span>
           <div className="flex flex-row gap-4">
             <FancyButton type="up">
-              <Link href="#projects">See projects</Link>
+              <Link href="/dev">Go to dev section</Link>
             </FancyButton>
             <FancyButton type="right">
-              <Link href="/blog">Read Blog</Link>
+              <Link href="/post-productive">Read Blog</Link>
             </FancyButton>
           </div>
         </div>
@@ -129,15 +129,15 @@ function Hero() {
           </div>
         </div>
         <span className="mx-2 font-normal text-neutral-500 text-sm lg:text-lg max-w-[50ch]">
-          If you want to learn about my projects or read my blog on
-          productivity, you have come to the right place.
+        If you want to learn about my projects or read Post Productive, my
+            blog, you have come to the right place.
         </span>
         <div className="flex flex-row gap-4 mx-2">
           <FancyButton type="up">
-            <Link href="#projects">See projects</Link>
+            <Link href="/dev">Go to dev section</Link>
           </FancyButton>
           <FancyButton type="right">
-            <Link href="/blog">Read Blog</Link>
+            <Link href="/post-productive">Read Blog</Link>
           </FancyButton>
         </div>
       </div>
