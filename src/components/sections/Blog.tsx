@@ -15,9 +15,15 @@ async function Blog() {
           </h2>
         </div>
         <div className="flex flex-col w-full gap-4">
-          {posts.map((post: Post, index: number) => (
-            <BlogCard key={index} post={post} />
-          ))}
+          {posts
+            .sort(
+              (a: Post, b: Post) =>
+                new Date(b.publishedAt).getTime() -
+                new Date(a.publishedAt).getTime()
+            )
+            .map((post: Post, index: number) => (
+              <BlogCard key={index} post={post} />
+            ))}
         </div>
       </div>
     </div>
