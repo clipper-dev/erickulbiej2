@@ -6,7 +6,6 @@ import Blog from "../../components/sections/Blog";
 import Newsletter from "../../components/sections/Newsletter";
 import BlogHero from "../../components/heros/BlogHero";
 import Head from "next/head";
-import CustomHead from "../../components/nav/CustomHead";
 import type { Metadata } from "next";
 
 export const metadata : Metadata= {
