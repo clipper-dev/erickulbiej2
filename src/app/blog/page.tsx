@@ -11,6 +11,7 @@ export default function Home() {
     <>
       <div className="">
         <BlogHero />
+        {/* @ts-expect-error Server Component */}
         <Blog />
         <Newsletter />
         <ContactForm />
