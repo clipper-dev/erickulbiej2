@@ -16,6 +16,13 @@ interface Props {
 }
 function Navbar({ data }: Props) {
   const [sidebar, setSidebar] = useState(false);
+  function hamburger(flag:boolean) {
+    if(flag){
+      return "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 before:transition-all after:transition-all"
+    } else {
+      return "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 before:transition-all after:transition-all after:translate-y-0 before:translate-y-0 -rotate-45 before:rotate-90 after:rotate-90"
+    }
+  }
   return (
     <header className="bg-transparent fixed w-full backdrop-blur z-50 flex justify-center shadow-sm bg-white">
       <div className=" max-w-screen-lg flex-1 p-2 flex flex-row justify-between">
@@ -58,12 +65,7 @@ function Navbar({ data }: Props) {
           }}
         >
           <div
-            className={
-              "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 before:transition-all after:transition-all " +
-              (sidebar
-                ? " after:translate-y-0 before:translate-y-0 -rotate-45 before:rotate-90 after:rotate-90 before:w-0"
-                : "")
-            }
+            className={hamburger(!sidebar)}
           ></div>
         </div>
       </div>
