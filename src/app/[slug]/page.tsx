@@ -2,7 +2,7 @@ import { PortableText } from "@portabletext/react";
 import Head from "next/head";
 import Image from "next/image";
 import { HiShare } from "react-icons/hi";
-import { getPost } from "../../../sanity/sanity-utils";
+import { client } from "../../../sanity/lib/client";
 import Tag from "../../components/crumbs/Tag";
 import ShareButton from "../../components/nav/ShareButton";
 import { Post } from "../../types/Post";
@@ -10,8 +10,18 @@ import { Post } from "../../types/Post";
 interface Props {
   params: { slug: string };
 }
-
-export async function generateMetadata({params}: Props){
+export const revalidate = 60;
+export async function getPost(slug: any) {
+  const data = await client.fetch(
+    `*[_type == "post" && allowed == true && slug.current == "${slug}"][0]{_id, publishedAt, bio, title, "categories": categories[]->title, author->{name, "image":image.asset->url}, "slug": slug.current, "mainImage": mainImage.asset->url, readingTime, body}`,
+    {
+      next: { revalidate: 60 },
+      cache: "no-store",
+    }
+  );
+  return data;
+}
+export async function generateMetadata({ params }: Props) {
   const post: Post = await getPost(params.slug);
   const date = new Date(post.publishedAt);
   const formattedDate = date.toLocaleDateString("en-US", {
@@ -37,8 +47,7 @@ export async function generateMetadata({params}: Props){
         },
       ],
     },
-  }
-
+  };
 }
 
 export default async function BlogPost({ params }: Props) {
