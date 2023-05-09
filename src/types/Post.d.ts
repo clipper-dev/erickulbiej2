@@ -2,6 +2,7 @@ import { PortableTextBlock } from "sanity";
 
 export interface Post {
     slug: string;
+    allowed?: boolean;
     title: string;
     bio: string;
     tag: string;
