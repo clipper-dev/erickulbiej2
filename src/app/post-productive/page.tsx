@@ -7,7 +7,7 @@ import Newsletter from "../../components/sections/Newsletter";
 import BlogHero from "../../components/heros/BlogHero";
 import Head from "next/head";
 import type { Metadata } from "next";
-
+export const revalidate = 60;
 export const metadata : Metadata= {
   title: "Post Productive - A Blog About Productivity, by Eric Kulbiej",
   description:
