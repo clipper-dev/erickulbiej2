@@ -79,7 +79,7 @@ function Hero() {
         <div className="flex flex-[2]">
           <div className=" rounded-full rounded-tl-none rounded-bl-none overflow-hidden relative w-full aspect-square">
             <Image
-              src="/res/eric.jpg"
+              src="/res/eric.png"
               fill
               objectFit="cover"
               alt="eric kulbiej profile picture"
