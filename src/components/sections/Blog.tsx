@@ -9,7 +9,7 @@ export async function getPosts() {
     `*[_type == "post"]{_id, publishedAt, bio, title, "categories": categories[]->title, "slug": slug.current, author->{name, "image":image.asset->url}, "mainImage": mainImage.asset->url, readingTime, body}`,
     {
       next: { revalidate: 60 },
-      cache: "no-store",
+      cache: "no-store"
     }
   );
   return data;
