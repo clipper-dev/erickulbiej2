@@ -7,8 +7,9 @@ import Tag from "../crumbs/Tag";
 import BlogCard from "../cards/BlogCard";
 import { Post } from "../../types/Post";
 import { client } from "../../../sanity/lib/client";
+import { getPosts } from "../../../sanity/sanity-utils";
 
-export const revalidate = 60;
+/* export const revalidate = 60;
 export async function getPosts() {
   const data = await client.fetch(
     `*[_type == "post"]{_id, publishedAt, bio, title, "categories": categories[]->title, "slug": slug.current, author->{name, "image":image.asset->url}, "mainImage": mainImage.asset->url, readingTime, body}`,
@@ -18,7 +19,7 @@ export async function getPosts() {
     }
   );
   return data;
-}
+} */
 async function NewInBlog() {
   const posts: Post[] = await getPosts();
   return (

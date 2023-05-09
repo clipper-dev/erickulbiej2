@@ -2,7 +2,8 @@ import React from "react";
 import BlogCard from "../cards/BlogCard";
 import { Post } from "../../types/Post";
 import { client } from "../../../sanity/lib/client";
-
+import { getPosts } from "../../../sanity/sanity-utils";
+/* 
 export const revalidate = 60;
 export async function getPosts() {
   const data = await client.fetch(
@@ -13,7 +14,7 @@ export async function getPosts() {
     }
   );
   return data;
-}
+} */
 async function Blog() {
   const posts: Post[] = await getPosts();
   return (
