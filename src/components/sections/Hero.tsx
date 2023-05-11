@@ -72,7 +72,7 @@ function Hero() {
     waitBetweenLoops,
   ]);
 
-  const imageName = "eric3.jpg ";
+  const imageName = "eric.jpg ";
   return (
     <div className="w-full flex flex-col pt-16 pb-2 items-center">
       {/* desktop */}
