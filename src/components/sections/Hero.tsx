@@ -72,6 +72,7 @@ function Hero() {
     waitBetweenLoops,
   ]);
 
+  const imageName = "eric3.jpg ";
   return (
     <div className="w-full flex flex-col pt-16 pb-2 items-center">
       {/* desktop */}
@@ -79,15 +80,15 @@ function Hero() {
         <div className="flex flex-[2]">
           <div className=" rounded-full rounded-tl-none rounded-bl-none overflow-hidden relative w-full aspect-square">
             <Image
-              src="/res/eric.png"
+              src={"/res/" + imageName}
               fill
               objectFit="cover"
               alt="eric kulbiej profile picture"
             />
           </div>
         </div>
-        <div className="flex flex-col justify-center lg:p-0 lg:items-start gap-4 items-left flex-[3] text-2xl lg:text-6xl font-bold">
-          <div className="flex flex-col">
+        <div className="flex flex-col justify-center lg:p-0 lg:items-start gap-4 items-left flex-[3] font-bold">
+          <div className="flex flex-col text-2xl md:text-4xl lg:text-6xl ">
             <span className="">Hi, it&apos;s Eric 👋</span>
             <span>
               I&apos;m a{" "}
@@ -114,7 +115,7 @@ function Hero() {
         <div className="grid grid-cols-6 gap-2">
           <div className="rounded-full rounded-tl-none rounded-bl-none overflow-hidden relative w-full aspect-square col-span-2">
             <Image
-              src="/res/eric.jpg"
+              src={"/res/" + imageName}
               fill
               style={{ objectFit: "cover" }}
               alt="eric kulbiej profile picture"
