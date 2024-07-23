@@ -16,7 +16,11 @@ module.exports = {
       /* mono fonts */
       mono: ["Menlo", "Monaco", "Courier New", "monospace"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        "black-light": "#050505",        
+      },
+    },
   },
   plugins: [require("@tailwindcss/line-clamp")],
 };

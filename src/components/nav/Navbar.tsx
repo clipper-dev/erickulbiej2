@@ -24,7 +24,7 @@ function Navbar({ data }: Props) {
     }
   }
   return (
-    <header className="bg-transparent fixed w-full backdrop-blur z-50 flex justify-center shadow-sm bg-white">
+    <header className="bg-transparent fixed w-full backdrop-blur z-50 flex justify-center shadow-sm ">
       <div className=" max-w-screen-lg flex-1 p-2 flex flex-row justify-between">
         {/* left */}
         <Link

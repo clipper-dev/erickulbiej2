@@ -11,9 +11,9 @@ export const data: ProjectItem[] = [
       "Using a modern design and a responsive layout, the website is easy to use on any device and is easy to navigate.",
     ],
     technologies: [
-		techs[techs.findIndex((obj)=>obj.name==="react")],
-		techs[techs.findIndex((obj)=>obj.name==="next")],
-		techs[techs.findIndex((obj)=>obj.name==="css")],
+      techs[techs.findIndex((obj) => obj.name === "react")],
+      techs[techs.findIndex((obj) => obj.name === "next")],
+      techs[techs.findIndex((obj) => obj.name === "css")],
     ],
   },
   {
@@ -27,9 +27,9 @@ export const data: ProjectItem[] = [
       "Coderburg provides projects with detailed step-by-step walkthrough and self-made tools useful for even experienced developers.",
     ],
     technologies: [
-		techs[techs.findIndex((obj)=>obj.name==="react")],
-		techs[techs.findIndex((obj)=>obj.name==="next")],
-		techs[techs.findIndex((obj)=>obj.name==="tailwind")],
+      techs[techs.findIndex((obj) => obj.name === "react")],
+      techs[techs.findIndex((obj) => obj.name === "next")],
+      techs[techs.findIndex((obj) => obj.name === "tailwind")],
     ],
   },
   {
@@ -43,9 +43,48 @@ export const data: ProjectItem[] = [
       "The website is fitted with several subpages as well as blog section.",
     ],
     technologies: [
-		techs[techs.findIndex((obj)=>obj.name==="react")],
-		techs[techs.findIndex((obj)=>obj.name==="next")],
-		techs[techs.findIndex((obj)=>obj.name==="css")],
+      techs[techs.findIndex((obj) => obj.name === "react")],
+      techs[techs.findIndex((obj) => obj.name === "next")],
+      techs[techs.findIndex((obj) => obj.name === "css")],
     ],
+  },
+];
+
+export const projectsLeft: Project[] = [
+  {
+    name: "Coderburg",
+    description:
+      "Modern e-learning platform aiming to teach front-end development and web technologies.",
+    keywords: ["Web", "E-learning"],
+    image: "/res/projects/coderburg-card.png",
+    //image: "/res/projects/majordomu-card.png",
+    link: "https://coderburg.com/",
+  },
+  {
+    name: "Majordomu",
+    description: "Productivity web app for organizing and managing routines.",
+    keywords: ["Startup", "Productivity", "NextJS"],
+    image: "/res/projects/majordomu-card.png",
+    link: "https://Majordomu.com/",
+  },
+];
+
+export const projectsRight: Project[] = [
+  {
+    name: "FerrySafe",
+    description: "Training and onboarding platform for ferry crew.",
+    keywords: ["Maritime", "Training", "NextJS"],
+    image: "/res/projects/ferrysafe-card.png",
+    //image: "/res/projects/majordomu-card.png",
+    link: "https://ferrysafe.app/",
+  },
+  {
+    name: "Last Moment Maneouvre",
+    description:
+      "Research project focusing on modelling and simulation of ship's last moment evasive maneuvers.",
+    keywords: ["Maritime", "Research", "Matlab"],
+    //image: "/res/projects/last-moment-maneuvre.png",
+    image: "/res/projects/lmm-card.png",
+    link: "https://erickulbiej.com/",
   },
 ];

@@ -1,21 +1,14 @@
-import Image from "next/image";
-import ContactForm from "../components/sections/ContactForm";
-import Hero from "../components/sections/Hero";
-import NewInBlog from "../components/sections/NewInBlog";
-import Newsletter from "../components/sections/Newsletter";
-import Projects from "../components/sections/Projects";
 
-export const revalidate = 60;
+import Hero from "./(Hero)/Hero";
+import Projects from "./(Hero)/Projects";
+
+export const revalidate = 6000;
 export default function Home() {
   return (
     <>
-      <div className="">
+      <div className="pt-20 md:pt-24">
         <Hero />
-        {/* @ts-expect-error Server Component */}
-        <NewInBlog />
         <Projects />
-        <Newsletter />
-        <ContactForm />
       </div>
     </>
   );

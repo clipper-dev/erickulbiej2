@@ -3,5 +3,29 @@
 @tailwind utilities;
 
 body {
-  background-color: #edeef0;
+  background-color: #f5f6f7;
+}
+
+.image-class {
+  border-radius: 16px 16px 16px 16px;
+  
+  object-fit: cover;
+  box-shadow: 8px 8px 0 0 black;
+  object-position: 30% 0%;
+}
+
+.image-class:hover {
+  box-shadow: none;
+}
+.ek-border-black {
+  box-shadow: 3px 3px 0 0 black;
+}
+.ek-border-black:hover{
+  box-shadow: 6px 6px 0 0 black;
+}
+.ek-border-white {
+  box-shadow: 3px 3px 0 0 white;
+}
+.ek-border-white:hover{
+  box-shadow: 6px 6px 0 0 white;
 }

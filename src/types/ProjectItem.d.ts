@@ -6,3 +6,11 @@ interface ProjectItem {
 	description: string[],
 	technologies: Technology[]
 }
+
+interface Project {
+	name: string;
+    description: string;
+    keywords: string[];
+    image: string;
+    link: string;
+}

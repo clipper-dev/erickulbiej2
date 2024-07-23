@@ -4,11 +4,12 @@ import { menu } from "../data/menu";
 import "./globals.css";
 
 export const metadata = {
-  title: "Eric Kulbiej - Frontend Developer, Researcher, and Seafarer",
+  title: "Eric Kulbiej - Seafarer and Software Developer",
   description:
-    'Eric Kulbiej is a freelance frontend developer, researcher, and seafarer with a flair for productivity. Merchant navy officer on a passenger ferry and the creator of the popular "Post Productive."',
+    'Seafarer who codes. Merchant navy officer on a passenger ferry and productivity enthusiast.',
 };
 
+import GoogleAnalytics from "./GoogleAnalytics";
 export default function RootLayout({
   children,
 }: {
@@ -49,6 +50,7 @@ export default function RootLayout({
       </head>
       <body>
         <nav>
+        <GoogleAnalytics />
           <Navbar data={menu} />
         </nav>
         {children}
