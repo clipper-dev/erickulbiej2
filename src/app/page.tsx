@@ -1,4 +1,5 @@
 
+import Expertise from "./(Hero)/Expertise";
 import Hero from "./(Hero)/Hero";
 import Projects from "./(Hero)/Projects";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="pt-20 md:pt-24">
         <Hero />
         <Projects />
+        <Expertise />
       </div>
     </>
   );
