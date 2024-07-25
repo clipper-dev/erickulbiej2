@@ -13,7 +13,7 @@ export default function Expertise() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8">
           <article className="flex flex-col gap-4">
-          <div className="p-4 border-[3px] border-blue-400 rounded-lg w-fit h-fit">
+          <div className="p-4 border-[3px] border-black rounded-lg w-fit h-fit bg-blue-100 ek-border-black hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300">
               <FaCode className="text-blue-400 text-7xl m-auto" />
             </div>
             <h2 className="font-semibold text-xl lg:text-2xl">Development</h2>
@@ -25,7 +25,7 @@ export default function Expertise() {
             </ul>
           </article>
           <article className="flex flex-col gap-4">
-          <div className="p-4 border-[3px] border-blue-400 rounded-lg w-fit h-fit">
+          <div className="p-4 border-[3px] border-black rounded-lg w-fit h-fit bg-blue-100 ek-border-black hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300">
               <FaComputer className="text-blue-400 text-7xl m-auto" />
             </div>
             <h2 className="font-semibold text-xl lg:text-2xl">
@@ -39,7 +39,7 @@ export default function Expertise() {
             </ul>
           </article>
           <article className="flex flex-col gap-4">
-          <div className="p-4 border-[3px] border-blue-400 rounded-lg w-fit h-fit">
+          <div className="p-4 border-[3px] border-black rounded-lg w-fit h-fit bg-blue-100 ek-border-black hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300">
               <TbMicroscope className="text-blue-400 text-7xl m-auto" />
             </div>
             <h2 className="font-semibold text-xl lg:text-2xl">Research</h2>
@@ -51,7 +51,7 @@ export default function Expertise() {
             </ul>
           </article>
           <article className="flex flex-col gap-4">
-            <div className="p-4 border-[3px] border-blue-400 rounded-lg w-fit h-fit">
+          <div className="p-4 border-[3px] border-black rounded-lg w-fit h-fit bg-blue-100 ek-border-black hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300">
               <RiShipFill className="text-blue-400 text-7xl m-auto" />
             </div>
             <h2 className="font-semibold text-xl lg:text-2xl">Maritime</h2>
