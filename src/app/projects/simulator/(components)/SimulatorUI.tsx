@@ -196,7 +196,7 @@ export function SimulatorUI() {
   };
 
   return (
-    <div className="fixed top-12 left-0 right-0 bottom-0 overflow-hidden bg-zinc-100">
+    <div className="fixed top-12 left-0 right-0 bottom-0 overflow-hidden bg-red-500">
       <div className="flex h-full w-full">
         <div className="flex-1 relative h-full">
           <TopToolbar
