@@ -1,20 +1,20 @@
-export const menu: MenuItem[] = [
+export const menuItems: MenuItem[] = [
   {
-    title: "Home",
-    path: "/",
+    title: "About",
+    path: "/about",
   },
   {
-    title: "Dev",
-    path: "/dev",
+    title: "Projects",
+    path: "/projects",
   },
   {
-    title: "Science",
-    path: "/science",
+    title: "Research",
+    path: "/research",
   },
-  {
-    title: "Blog",
-    path: "/post-productive",
-  },
+/*   {
+    title: "Writing",
+    path: "/writing",
+  }, */
   {
     title: "Contact",
     path: "/contact",

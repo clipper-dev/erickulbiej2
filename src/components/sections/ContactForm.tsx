@@ -1,11 +1,10 @@
 "use client";
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
 
-import "react-toastify/dist/ReactToastify.css";
 import { FaSpinner } from "react-icons/fa";
+import { toast } from "sonner";
 
 function ContactForm() {
   const [email, setEmail] = useState("");
@@ -48,16 +47,7 @@ function ContactForm() {
             }, 2000);
 
             console.log(result.text);
-            toast("📩 Your message has been sent!", {
-              position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast("📩 Your message has been sent!");
             form.current.reset();
           },
           (error) => {
@@ -71,16 +61,7 @@ function ContactForm() {
               setButtonClass("bg-indigo-500 hover:bg-indigo-600");
             }, 2000);
 
-            toast.error("⛈️ Something clearly went wrong...", {
-              position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
+            toast.error("⛈️ Something clearly went wrong...");
             form.current.reset();
           }
         );
@@ -94,16 +75,7 @@ function ContactForm() {
         setButtonClass("bg-indigo-500 hover:bg-indigo-600");
       }, 2000);
 
-      toast.error("⛈️ Something clearly went wrong...", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.error("⛈️ Something clearly went wrong...");
     }
   };
 
@@ -143,18 +115,6 @@ function ContactForm() {
   }, []);
   return (
     <div className="w-full flex flex-col items-center">
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <div className="w-full max-w-screen-lg flex flex-col gap-4 p-2">
         <div className="flex flex-row gap-2">
           <div className=" w-[4px] bg-indigo-600"></div>

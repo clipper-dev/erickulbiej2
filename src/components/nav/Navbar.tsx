@@ -1,98 +1,32 @@
-"use client";
-import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaBoxOpen,
-  FaSuitcase,
-  FaSuitcaseRolling,
-  FaUser,
-} from "react-icons/fa";
-import FancyButton from "../buttons/FancyButton";
-interface Props {
-  data: MenuItem[];
-}
-function Navbar({ data }: Props) {
-  const [sidebar, setSidebar] = useState(false);
-  function hamburger(flag:boolean) {
-    if(flag){
-      return "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all  before:translate-y-2 after:-translate-y-2 before:transition-all after:transition-all"
-    } else {
-      return "h-[2px] w-[20px] relative bg-black before:absolute before:h-[2px] before:w-[20px] before:bg-black after:absolute after:h-[2px] after:w-[20px] after:bg-black transition-all before:transition-all after:transition-all before:translate-y-0 after:translate-y-0 -rotate-45 before:rotate-90 after:rotate-90"
-    }
-  }
+import { MobileNavbar } from "./MobileNavbar";
+import { menuItems } from "@/data/menu";
+
+export function Navbar() {
   return (
-    <header className="bg-transparent fixed w-full backdrop-blur z-50 flex justify-center shadow-sm ">
-      <div className=" max-w-screen-lg flex-1 p-2 flex flex-row justify-between">
-        {/* left */}
-        <Link
-          href={"/"}
-          className=" text-zinc-900 flex flex-row items-center gap-2 text-lg lg:text-2xl font-bold"
-        >
-          {/* <Image
-            alt="Eric Kulbiej"
-            src="/logo512.png"
-            width={20}
-            height={20}
-          />{" "} */}
-          eric kulbiej
+    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
+      <div className="max-w-screen-lg mx-auto p-3 flex justify-between items-center">
+        {/* Left Side: Logo/Name */}
+        <Link href="/" className="text-zinc-900 text-lg lg:text-2xl font-bold">
+          <span className="text-blue-500">eric</span>.kulbiej
         </Link>
-        {/* right */}
-        <div className=" hidden lg:flex flex-row gap-8">
-          {/*  <FancyButton className="text-indigo-50 flex flex-row items-center gap-2 text-md font-bold">
-            <Link href="/signin" className="text-lg font-bold">
-              Contact 
+
+        {/* Right Side: Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8 text-md font-medium">
+          {menuItems.map((item) => (
+            <Link
+              key={item.path}
+              href={item.path}
+              className="text-foreground transition-colors hover:text-blue-500 hover:underline"
+            >
+              {item.title}
             </Link>
-          </FancyButton> */}
-          <span className="flex flex-row items-center gap-8 text-md font-semibold">
-            {data.map((item, index) => (
-              <Link
-                key={index}
-                href={item.path}
-                className=" transition-all hover:text-red-600"
-              >
-                {item.title}
-              </Link>
-            ))}
-          </span>
-        </div>
-        <div
-          className="flex lg:hidden items-center"
-          onClick={() => {
-            setSidebar(!sidebar);
-          }}
-        >
-          <div
-            className={hamburger(!sidebar)}
-          ></div>
-        </div>
-      </div>
-      {/* sidebar that comes from right side when sidebar value is changed */}
-      <div
-        className={
-          "fixed top-[44px] right-0 h-screen w-[50%] bg-white shadow-lg transition-all z-50 border-t-2 " +
-          (sidebar ? " translate-x-0 " : " translate-x-full ")
-        }
-      >
-        <div className="flex flex-col gap-4 p-4 ml-4">
-            {data.map((item, index) => (
-              <Link
-                key={index}
-                href={item.path}
-                className="flex flex-row items-center gap-8 text-lg font-semibold transition-all hover:text-red-600"
-                onClick={() => {
-                  setSidebar(!sidebar);
-                }}
-              >
-                {item.title}
-              </Link>
-            ))}
-        </div>
+          ))}
+        </nav>
+
+        {/* Mobile Navigation Component */}
+        <MobileNavbar menuItems={menuItems} />
       </div>
     </header>
   );
 }
-
-export default Navbar;

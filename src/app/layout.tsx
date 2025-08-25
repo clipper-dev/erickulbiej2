@@ -1,15 +1,62 @@
-import Footer from "../components/nav/Footer";
-import Navbar from "../components/nav/Navbar";
-import { menu } from "../data/menu";
+import { Metadata } from "next";
+import { Toaster } from "sonner";
+import { Navbar } from "@/components/nav/Navbar";
+import Footer from "@/components/nav/Footer";
+import GoogleAnalytics from "./GoogleAnalytics";
 import "./globals.css";
 
-export const metadata = {
-  title: "Eric Kulbiej - Seafarer and Software Developer",
-  description:
-    'Seafarer who codes. Merchant navy officer on a passenger ferry and productivity enthusiast.',
+export const metadata: Metadata = {
+  title: "Eric Kulbiej - Maritime Officer and Web Engineer",
+  description: "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
+  keywords: ["Eric Kulbiej", "Maritime Officer", "Web Engineer", "Frontend Developer", "Merchant Navy", "Passenger Ferry", "Productivity"],
+  authors: [{ name: "Eric Kulbiej" }],
+  creator: "Eric Kulbiej",
+  publisher: "Eric Kulbiej",
+  metadataBase: new URL("https://www.erickulbiej.com"),
+  openGraph: {
+    title: "Eric Kulbiej - Maritime Officer and Web Engineer",
+    description: "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
+    url: "https://www.erickulbiej.com",
+    siteName: "Eric Kulbiej",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Eric Kulbiej - Maritime Officer and Web Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eric Kulbiej - Maritime Officer and Web Engineer",
+    description: "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
+    images: ["/images/twitter-image.jpg"],
+    creator: "@erickulbiej", // Add your Twitter handle if you have one
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.erickulbiej.com",
+  },
+  icons: {
+    icon: "/logo512.png",
+    shortcut: "/logo512.png",
+    apple: "/logo512.png",
+  },
 };
 
-import GoogleAnalytics from "./GoogleAnalytics";
 export default function RootLayout({
   children,
 }: {
@@ -17,44 +64,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={metadata.description} />
-        <meta name="author" content="Eric Kulbiej" />
-        <meta
-          name="keywords"
-          content="Eric Kulbiej, Frontend Developer, Researcher, Writer"
-        />
-        <link rel="icon" href="/logo512.png" />
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.erickulbiej.com" />
-        <meta
-          property="og:image"
-          content="https://www.erickulbiej.com/images/og-image.jpg"
-        />
-
-        {/* Twitter tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:url" content="https://www.erickulbiej.com" />
-        <meta
-          name="twitter:image"
-          content="https://www.erickulbiej.com/images/twitter-image.jpg"
-        />
-
-        <title>{metadata.title}</title>
-      </head>
       <body>
-        <nav>
         <GoogleAnalytics />
-          <Navbar data={menu} />
-        </nav>
-        {children}
+        <Navbar />
+        <main>{children}</main>
         <Footer />
+        <Toaster position="bottom-right" richColors />
       </body>
     </html>
   );

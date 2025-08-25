@@ -10,9 +10,7 @@ export default function Hero() {
       <div className="w-full max-w-screen-lg flex flex-col gap-4">
         <section className="grid grid-cols-3 gap-4 p-4">
           <div className="col-span-2">
-            <span className="font-medium text-zinc-600 text-sm  lg:text-lg max-w-[50ch]">
-              👋 Hi, it&apos;s Eric
-            </span>
+            
             <h1 className="font-semibold text-4xl lg:text-8xl my-4">
               I build <span className="text-blue-600">wonderful</span> solutions
             </h1>

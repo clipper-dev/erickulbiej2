@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowRight, FaArrowDown } from "react-icons/fa";
-import styles from "./FancyButton.module.css";
+import styles from './FancyButton.module.css'
 
 function FancyButton({ children, clicked, type }: any) {
   return (
