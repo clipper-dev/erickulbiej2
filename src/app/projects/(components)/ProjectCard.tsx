@@ -9,14 +9,14 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
-  const flexDirection = isReversed ? "md:flex-row-reverse" : "md:flex-row";
+  const flexDirection = isReversed ? "md:flex-row" : "md:flex-row";
 
   return (
     <article
       className={`flex flex-col ${flexDirection} gap-8 md:gap-12 items-center`}
     >
       {/* Image Section */}
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-1/3">
         <Link href={project.link} target="_blank" rel="noopener noreferrer">
           <img
             src={project.image}
@@ -27,7 +27,7 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
       </div>
 
       {/* Text Content Section */}
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-2/3">
         <h3 className="text-2xl font-bold text-zinc-900 mb-3">
           {project.name}
         </h3>

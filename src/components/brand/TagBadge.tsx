@@ -38,7 +38,7 @@ type Variant = keyof typeof colorVariants;
 // Map specific keywords to our color variants.
 // Keywords are checked in lowercase to be case-insensitive.
 const keywordColorMap: Record<string, Variant> = {
-  "next.js": "sky",
+  nextjs: "sky",
   "next.js 15": "sky",
   typescript: "sky",
   react: "sky",
@@ -52,6 +52,14 @@ const keywordColorMap: Record<string, Variant> = {
   engineering: "rose",
   simulation: "rose",
   "data visualization": "indigo",
+  "e-learning": "green",
+  maritime: "sky",
+  ferry: "sky",
+  ship: "sky",
+  navigation: "sky",
+  web: "amber",
+  startup: "indigo",
+  productivity: "green",
 };
 
 export function TagBadge({ text, className }: TagBadgeProps) {
