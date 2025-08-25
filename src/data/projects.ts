@@ -52,6 +52,13 @@ export const data: ProjectItem[] = [
 
 export const projectsLeft: Project[] = [
   {
+    name: "Ship Maneuvering Simulator",
+    description: "A 2D real-time ship maneuvering simulator.",
+    keywords: ["Ship", "Simulation", "NextJS"],
+    image: "/res/projects/shipManeuver.png",
+    link: "/projects/simulator",
+  },
+  {
     name: "Coderburg",
     description:
       "Modern e-learning platform aiming to teach front-end development and web technologies.",
@@ -85,6 +92,6 @@ export const projectsRight: Project[] = [
     keywords: ["Maritime", "Research", "Matlab"],
     //image: "/res/projects/last-moment-maneuvre.png",
     image: "/res/projects/lmm-card.png",
-    link: "https://erickulbiej.com/",
+    link: "/research",
   },
 ];

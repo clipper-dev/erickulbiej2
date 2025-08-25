@@ -1,5 +1,5 @@
 
-import ContactForm from "../../components/sections/ContactForm";
+import {ContactForm} from "../../components/sections/ContactForm";
 import Newsletter from "../../components/sections/Newsletter";
 import Science from "../../components/sections/Science";
 import ScienceHero from "../../components/heros/ScienceHero";

@@ -17,7 +17,15 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
     >
       {/* Image Section */}
       <div className="w-full md:w-1/3">
-        <Link href={project.link} target="_blank" rel="noopener noreferrer">
+        <Link
+          href={
+            project.link.startsWith("http")
+              ? project.link
+              : `${process.env.NEXT_URL}/${project.link}`
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src={project.image}
             alt={`${project.name} preview`}
