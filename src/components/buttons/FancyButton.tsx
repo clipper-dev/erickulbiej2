@@ -1,8 +1,11 @@
 import React from "react";
 import { FaArrowRight, FaArrowDown } from "react-icons/fa";
-import styles from './FancyButton.module.css'
-
-function FancyButton({ children, clicked, type }: any) {
+import styles from "./FancyButton.module.css";
+interface Props {
+  children: React.ReactNode;
+  type: "right" | "up";
+}
+function FancyButton({ children, type }: Props) {
   return (
     <div
       className={[
