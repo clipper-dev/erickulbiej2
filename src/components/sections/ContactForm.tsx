@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useActionState, useEffect } from "react";
 import { toast } from "sonner";
 import { Loader2, Send } from "lucide-react";
 import { useFormStatus } from "react-dom";
@@ -8,6 +8,8 @@ import { useFormStatus } from "react-dom";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Label } from "@radix-ui/react-label";
 import { FormState, sendEmail } from "@/server/actions/email/sendEmail";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 // ... other imports
 
 const initialState: FormState = {
@@ -31,7 +33,7 @@ function SubmitButton() {
 }
 
 export function ContactForm() {
-  const [state, formAction] = useFormState(sendEmail, initialState);
+  const [state, formAction] = useActionState(sendEmail, initialState);
 
   useEffect(() => {
     if (state.status === "success") {
