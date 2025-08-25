@@ -1,0 +1,60 @@
+{
+  "principalParticulars": {
+    "name": "Inisheer",
+    "type": "Passenger Ferry",
+    "lengthOverall": 180.0,
+    "lengthBetweenPerpendiculars": 160.9,
+    "breadth": 24.0,
+    "draft": 6.5,
+    "blockCoefficient": 0.575
+  },
+  "massAndInertia": {
+    "mass": 14782587,
+    "longitudinalCenterOfGravity": -3.5,
+    "momentOfInertiaZ": 9.6e10
+  },
+  "hull": {
+    "X_vv": -0.015,
+    "X_vr": 0.0,
+    "X_rr": 0.005,
+    "X_vvvv": 0.0,
+    "Y_v": -0.15,
+    "Y_r": 0.05,
+    "Y_vvv": -1.2,
+    "Y_vvr": 0.0,
+    "Y_vrr": 0.0,
+    "Y_rrr": 0.0,
+    "N_v": -0.05,
+    "N_r": -0.025,
+    "N_vvv": -0.1,
+    "N_vvr": 0.0,
+    "N_vrr": 0.0,
+    "N_rrr": 0.0
+  },
+  "propeller": {
+    "count": 2,
+    "type": "CPP",
+    "diameter": 4.0,
+    "rpm": 148,
+    "locations": [
+      { "x": -75.0, "y": -6.0 },
+      { "x": -75.0, "y": 6.0 }
+    ],
+    "thrustDeduction": 0.15,
+    "wakeFraction": 0.2,
+    "ktCoefficients": [],
+    "kqCoefficients": []
+  },
+  "rudder": {
+    "count": 2,
+    "totalArea": 14.2,
+    "location": { "x": -80.45 },
+    "rudderAreaRatio": 0.0135,
+    "flowStraighteningCoefficient": 2.5,
+    "rudderForceIncreaseFactor": 1.8,
+    "rudderForceCenter": -0.7
+  },
+  "performance": {
+    "maxSpeedKnots": 22.0
+  }
+}
