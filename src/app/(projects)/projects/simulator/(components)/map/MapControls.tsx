@@ -26,7 +26,7 @@ export function MapControls({
 }: MapControlsProps) {
   return (
     <TooltipProvider delayDuration={150}>
-      <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
+      <div className="absolute top-16 left-4 z-20 flex flex-col gap-2">
         <Tooltip>
           <TooltipTrigger asChild>
             <Button variant="outline" size="icon" onClick={onZoomIn}>

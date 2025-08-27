@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from "react";
 
 // Import Components
 import { RightSidebar } from "./RightSidebar";
-import { TopToolbar } from "./TopToolbar";
-import { MapDisplay } from "./MapDisplay";
+import { TopToolbar } from "./map/TopToolbar";
+import { MapDisplay } from "./map/MapDisplay";
 import { RestartModal } from "./RestartModal";
 import { SettingsModal } from "./SettingsModal";
 
@@ -66,6 +66,7 @@ const channel = new BroadcastChannel("simulator_dashboard");
 export function SimulatorUI() {
   // The "true" state of the simulation, updated by the physics engine
   const [motion, setMotion] = useState<MotionState>(initialMotionState);
+  const motionRef = useRef<MotionState>(initialMotionState);
 
   // --- ADD A REF FOR THE POPUP WINDOW ---
   const popupRef = useRef<Window | null>(null);
@@ -120,16 +121,18 @@ export function SimulatorUI() {
 
         // Physics Loop (Fixed Timestep)
         while (timeAccumulatorRef.current >= PHYSICS_TIMESTEP) {
-          setMotion((currentMotion) => {
-            // Synchronously update the ref with the state *before* the physics step
-            previousMotionRef.current = currentMotion;
-            return updateMotionState(
-              currentMotion,
-              controls,
-              shipData,
-              PHYSICS_TIMESTEP
-            );
-          });
+          console.log("time step");
+          console.log("current motion:", motion);
+          previousMotionRef.current = motionRef.current;
+          const newMotion = updateMotionState(
+            motionRef.current,
+            controls,
+            shipData,
+            PHYSICS_TIMESTEP
+          );
+          console.log("updated motion:", newMotion)
+          setMotion(newMotion);
+          motionRef.current = newMotion;
           timeAccumulatorRef.current -= PHYSICS_TIMESTEP;
         }
       }
@@ -138,7 +141,7 @@ export function SimulatorUI() {
       const alpha = timeAccumulatorRef.current / PHYSICS_TIMESTEP;
       const newDisplayMotion = interpolateMotion(
         previousMotionRef.current,
-        motion,
+        motionRef.current,
         alpha
       );
       setDisplayMotion(newDisplayMotion);
@@ -155,8 +158,8 @@ export function SimulatorUI() {
       animationFrameId = requestAnimationFrame(gameLoop);
     };
 
-    animationFrameId = requestAnimationFrame(gameLoop); 
-    
+    animationFrameId = requestAnimationFrame(gameLoop);
+
     // --- NEW: CLEANUP EFFECT ---
     // Ensure the popup is closed when the main component unmounts
     return () => {

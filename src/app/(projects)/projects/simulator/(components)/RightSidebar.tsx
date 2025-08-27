@@ -11,6 +11,7 @@ import { PanelTopOpen } from "lucide-react";
 
 // --- HELPERS (unchanged) ---
 const radToDeg = (rad: number) => rad * (180 / Math.PI);
+const headingDisplay = (angle: number)=> angle < 0 ? angle + 360 : angle;
 const mpsToKnots = (mps: number) => mps * 1.94384;
 const radPerSecToDegPerMin = (radPerSec: number) =>
   radPerSec * (180 / Math.PI) * 60;
@@ -87,7 +88,7 @@ export function RightSidebar({
             <Separator />
             <ParameterDisplay
               label="Heading"
-              value={radToDeg(motion.position.heading).toFixed(1)}
+              value={headingDisplay(radToDeg(motion.position.heading)).toFixed(1)}
               unit="°"
             />
             <ParameterDisplay

@@ -2,7 +2,7 @@
 
 import { useState, useRef, MouseEvent, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { MapControls } from "./MapControls";
+import { MapControls } from "./map/MapControls";
 import { Ship } from "./Ship"; // Import the new dedicated Ship component
 
 const PIXELS_PER_METER = 0.5;
@@ -30,8 +30,8 @@ export function MapDisplay({ motion, shipData, settings }: MapDisplayProps) {
     const { clientWidth, clientHeight } = mapRef.current;
     const centerX = clientWidth / 2;
     const centerY = clientHeight / 2;
-    const newViewOffsetX = centerX + lockOffset.x - (motion.position.north * PIXELS_PER_METER * zoom);
-    const newViewOffsetY = centerY + lockOffset.y - (-motion.position.east * PIXELS_PER_METER * zoom);
+    const newViewOffsetX = centerX + lockOffset.x - (motion.position.east * PIXELS_PER_METER * zoom);
+    const newViewOffsetY = centerY + lockOffset.y - (-motion.position.north * PIXELS_PER_METER * zoom);
     setViewOffset({ x: newViewOffsetX, y: newViewOffsetY });
   }, [isLocked, lockOffset, motion, zoom]);
 
@@ -81,8 +81,8 @@ export function MapDisplay({ motion, shipData, settings }: MapDisplayProps) {
       const { clientWidth, clientHeight } = mapRef.current;
       const centerX = clientWidth / 2;
       const centerY = clientHeight / 2;
-      const shipScreenX = viewOffset.x + (motion.position.north * PIXELS_PER_METER * zoom);
-      const shipScreenY = viewOffset.y + (-motion.position.east * PIXELS_PER_METER * zoom);
+      const shipScreenX = viewOffset.x + (motion.position.east * PIXELS_PER_METER * zoom);
+      const shipScreenY = viewOffset.y + (-motion.position.north * PIXELS_PER_METER * zoom);
       setLockOffset({
         x: shipScreenX - centerX,
         y: shipScreenY - centerY,

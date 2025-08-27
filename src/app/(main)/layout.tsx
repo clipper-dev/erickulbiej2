@@ -1,7 +1,6 @@
 import { Metadata } from "next";
-import { Toaster } from "sonner";
-import GoogleAnalytics from "./GoogleAnalytics";
-import "./globals.css";
+import { Navbar } from "@/components/nav/Navbar";
+import Footer from "@/components/nav/Footer";
 
 export const metadata: Metadata = {
   title: "Eric Kulbiej - Maritime Officer and Web Engineer",
@@ -63,9 +62,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <GoogleAnalytics />
+        <Navbar />
         <main>{children}</main>
-        <Toaster position="bottom-right" richColors />
+        <Footer />
       </body>
     </html>
   );

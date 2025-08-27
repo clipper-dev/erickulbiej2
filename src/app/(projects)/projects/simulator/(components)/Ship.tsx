@@ -22,7 +22,7 @@ export function Ship({ motion, shipData }: ShipProps) {
   //    - Navigational 0° (North) should be UP.
   //    - Our component's default "bow" is LEFT.
   //    - A +90° CSS rotation turns LEFT to UP.
-  const cssRotationDegrees = headingDegrees - 90;
+  const cssRotationDegrees = headingDegrees + 90;
 
   const shipContainerTransform = {
     // The X/Y translation logic remains correct.
@@ -30,8 +30,8 @@ export function Ship({ motion, shipData }: ShipProps) {
     // Y-axis (sway) is inverted for CSS's downward-positive Y-axis.
     transform: `
       translate(
-        ${motion.position.north * PIXELS_PER_METER}px,
-        ${-motion.position.east * PIXELS_PER_METER}px
+        ${motion.position.east * PIXELS_PER_METER}px,
+        ${-motion.position.north * PIXELS_PER_METER}px
       )
       rotate(${cssRotationDegrees}deg)
     `,

@@ -11,10 +11,10 @@ export const menuItems: MenuItem[] = [
     title: "Research",
     path: "/research",
   },
-/*   {
+  {
     title: "Writing",
     path: "/writing",
-  }, */
+  },
   {
     title: "Contact",
     path: "/contact",

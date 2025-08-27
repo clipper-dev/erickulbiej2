@@ -25,6 +25,9 @@ function Footer() {
             <Link href="/projects" className="hover:text-blue-500 ">
               Projects
             </Link>
+            <Link href="/writing" className="hover:text-blue-500 ">
+              Writing
+            </Link>
             <Link href="/about" className="hover:text-blue-500 ">
               About me
             </Link>
@@ -35,19 +38,19 @@ function Footer() {
         </div>
 
         <div className="col-span-2 md:col-span-1 flex flex-row gap-8 text-3xl my-8 mx-auto ">
-              <a href="https://x.com/Erickulbiej">
-                <FaTwitter className="cursor-pointer hover:text-blue-500 transition-all duration-300 ease-in-out" />
-              </a>
-              <a href="https://github.com/clipper-dev">
-                <FaGithub className="cursor-pointer hover:text-blue-500 transition-all duration-300 ease-in-out" />
-              </a>
-              <a href="www.linkedin.com/in/erickulbiej">
-                <FaLinkedin className="cursor-pointer hover:text-blue-500 transition-all duration-300 ease-in-out"/>
-              </a>
-              <a href="https://www.instagram.com/coderburg">
-                <FaInstagram className="cursor-pointer hover:text-blue-500 transition-all duration-300 ease-in-out" />
-              </a>
-            </div>
+          <a href="https://x.com/Erickulbiej">
+            <FaTwitter className="cursor-pointer hover:text-blue-500 transition-all duration-300 ease-in-out" />
+          </a>
+          <a href="https://github.com/clipper-dev">
+            <FaGithub className="cursor-pointer hover:text-blue-500 transition-all duration-300 ease-in-out" />
+          </a>
+          <a href="www.linkedin.com/in/erickulbiej">
+            <FaLinkedin className="cursor-pointer hover:text-blue-500 transition-all duration-300 ease-in-out" />
+          </a>
+          <a href="https://www.instagram.com/coderburg">
+            <FaInstagram className="cursor-pointer hover:text-blue-500 transition-all duration-300 ease-in-out" />
+          </a>
+        </div>
 
         <div className="col-span-2 text-center flex flex-col gap-4 mt-auto text-zinc-400 font-medium text-sm md:text-base">
           <span className="">Copyright Eric Kulbiej, {currentYear}</span>

@@ -2,10 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Play, Pause, StopCircle,
+  Play, Pause,
   ChevronsDown, ChevronsUp, TimerReset
 } from "lucide-react";
-import { SettingsDropdown } from "./SettingsDropdown";
+import { SettingsDropdown } from "../SettingsDropdown";
 
 interface TopToolbarProps {
   isPaused: boolean;
@@ -43,7 +43,6 @@ export function TopToolbar({
   onTimeSlower,
   onTimeReset,
   onTimeFaster,
-  onStop,
   onOpenSettings,
   onRestart,
 }: TopToolbarProps) {
@@ -54,9 +53,9 @@ export function TopToolbar({
         <Button variant="ghost" size="icon" onClick={onTogglePlayPause}>
           {isPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
         </Button>
-        <Button variant="ghost" size="icon" onClick={onStop}>
+       {/*  <Button variant="ghost" size="icon" onClick={onStop}>
           <StopCircle className="h-5 w-5" />
-        </Button>
+        </Button> */}
 
         <div className="h-full w-[1px] bg-border mx-2" />
 
