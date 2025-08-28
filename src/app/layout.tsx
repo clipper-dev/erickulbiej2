@@ -3,17 +3,29 @@ import { Toaster } from "sonner";
 import GoogleAnalytics from "./GoogleAnalytics";
 import "./globals.css";
 
+import { Mongolyth } from "@clipper-dev/mongolytics-next/client";
+
 export const metadata: Metadata = {
   title: "Eric Kulbiej - Maritime Officer and Web Engineer",
-  description: "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
-  keywords: ["Eric Kulbiej", "Maritime Officer", "Web Engineer", "Frontend Developer", "Merchant Navy", "Passenger Ferry", "Productivity"],
+  description:
+    "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
+  keywords: [
+    "Eric Kulbiej",
+    "Maritime Officer",
+    "Web Engineer",
+    "Frontend Developer",
+    "Merchant Navy",
+    "Passenger Ferry",
+    "Productivity",
+  ],
   authors: [{ name: "Eric Kulbiej" }],
   creator: "Eric Kulbiej",
   publisher: "Eric Kulbiej",
   metadataBase: new URL("https://www.erickulbiej.com"),
   openGraph: {
     title: "Eric Kulbiej - Maritime Officer and Web Engineer",
-    description: "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
+    description:
+      "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
     url: "https://www.erickulbiej.com",
     siteName: "Eric Kulbiej",
     images: [
@@ -30,7 +42,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Eric Kulbiej - Maritime Officer and Web Engineer",
-    description: "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
+    description:
+      "Seafarer who codes. Merchant navy officer on a passenger ferry, web dev engineer, and productivity enthusiast.",
     images: ["/images/twitter-image.jpg"],
     creator: "@erickulbiej", // Add your Twitter handle if you have one
   },
@@ -64,7 +77,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <GoogleAnalytics />
-        <main>{children}</main>
+        <main>
+        <Mongolyth />
+          {children}</main>
         <Toaster position="bottom-right" richColors />
       </body>
     </html>
